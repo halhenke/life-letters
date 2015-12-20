@@ -73,6 +73,7 @@
     "phantomjs": "^1.9.19",
     "react-addons-test-utils": "^0.14.3",
     "react-jasmine-matchers": "^2.0.0",
+    "react-tap-event-plugin": "^0.2.1",
     "react-transform-catch-errors": "^1.0.0",
     "react-transform-hmr": "^1.0.1",
     "redbox-react": "^1.2.0",
