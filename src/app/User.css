@@ -1,0 +1,16 @@
+.content {
+  padding: 2rem 1rem;
+}
+
+.imgCont {
+  position: relative;
+  padding-bottom: 40%;
+}
+
+.imgBG {
+  position: absolute;
+  background-size: 100%;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
