@@ -1,7 +1,7 @@
 {
-  "name": "esnext-quickstart",
+  "name": "react-life-letters",
   "version": "1.0.0",
-  "description": "ESNext quickstart",
+  "description": "Life Letters Coding Challenge",
   "main": "lib/index.js",
   "scripts": {
     "prebuild": "rimraf example",
@@ -27,7 +27,7 @@
     "type": "git",
     "url": "https://github.com/nkbt/esnext-quickstart.git"
   },
-  "author": "Nik Butenko <nik@butenko.me> (http://butenko.me/)",
+  "author": "Hal Henke <halhenke@gmail.com> (http://halhenke.info)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/nkbt/esnext-quickstart/issues"
