@@ -1,0 +1,62 @@
+.key {
+  padding: 5% 0
+}
+
+.key h2 {
+  padding: 5%;
+}
+
+.sequence h1 {
+  padding-bottom: 5%;
+}
+
+.sequence {
+  padding: 2rem 1rem;
+  font-size: 0.8rem;
+  /*overflow-wrap: break-word;*/
+}
+
+
+.maxWidth {
+  width: 100%;
+}
+
+.gene {
+  padding: 0.4rem;
+  /*width: 0.5rem;*/
+  width: 2rem;
+  height: 2rem;
+  display: inline-block;
+  box-sizing: border-box;
+  border: 1px solid grey;
+}
+
+/*.gene:global(.key) {*/
+/*.key .gene {
+  display: block;
+}
+*/
+.gene:global(.a) {
+  background-color: rgb(251, 251, 131);
+  border-color: rgb(251, 251, 131);
+}
+.gene:global(.c) {
+  background-color: rgb(158, 241, 158);
+  border-color: rgb(158, 241, 158);
+}
+.gene:global(.g) {
+  background-color: rgb(80, 201, 255);
+  border-color: rgb(80, 201, 255);
+  color: white;
+}
+.gene:global(.t) {
+  background-color: rgb(255, 131, 91);
+  border-color: rgb(255, 131, 91);
+  color: white;
+}
+.gene:global(.mutant) {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  /*border: 0.1rem solid white;*/
+}
