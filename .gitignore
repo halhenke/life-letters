@@ -20,3 +20,5 @@ pids
 /reports/
 
 /.eslintcache
+.DS_Store
+src/images

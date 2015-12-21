@@ -29,6 +29,10 @@
     "vars-on-top": 0,
 
     "comma-dangle": [2, "always-multiline"],
+    "consistent-this": [2, "self"], // enforce consistent naming when capturing the current execution context
+
+    "dot-location": [2, "object"],
+    "no-else-return": 0, // disallow else after a return in an if
     "react/forbid-prop-types": [0, ["array"]], // Forbid certain propTypes
 
   }
