@@ -80,3 +80,23 @@
   border: 1px solid white;
   /*border: 0.1rem solid white;*/
 }
+
+/* Active Regions Come last so they have precedence */
+.sequence:global(.showRegion) .gene:not(.activeRegion) {
+  background-color: grey;
+  border-color: grey;
+}
+
+/*.gene.activeRegion {
+  border-top: 2px dotted red;
+  border-bottom: 2px dotted red;
+}
+
+.gene.activeRegion.grBegin {
+  border-left: 2px dotted red;
+}
+
+.gene.activeRegion.grEnd {
+  border-right: 2px dotted red;
+}
+*/
