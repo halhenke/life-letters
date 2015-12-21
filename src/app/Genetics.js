@@ -117,6 +117,24 @@ export const GeneSequence = React.createClass({
     }
   },
 
+  region(index) {
+    const classes = [];
+
+    this.props.geneRegions.forEach(gr => {
+      if (index === gr.start) {
+        classes.push(styles.grBegin, gr.name);
+        return;
+      } else if (index === gr.end) {
+        classes.push(styles.grEnd, gr.name);
+        return;
+      } else if (_.inRange(index, gr.start, gr.end + 1)) {
+        classes.push(styles.grInside, gr.name);
+        return;
+      }
+    });
+    return classes;
+  },
+
   render() {
     const sequenceClasses = cn(styles.sequence, {
       showRegion: this.state.showRegion,
