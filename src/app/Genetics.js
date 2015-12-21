@@ -208,6 +208,50 @@ export const Nucleotide = React.createClass({
     });
   },
 
+  showReference(e) {
+    e.preventDefault();
+    this.setState({
+      currentVal: this.props.base,
+    });
+  },
+
+  hideReference(e) {
+    e.preventDefault();
+    this.setDefault();
+  },
+
+  overHandler() {
+    if (this.props.mutant) {
+      return this.showReference;
+    } else {
+      return null;
+    }
+  },
+
+  outHandler() {
+    if (this.props.mutant) {
+      return this.hideReference;
+    } else {
+      return null;
+    }
+  },
+
+  // startHandler() {
+  //   if (this.props.mutant) {
+  //     return this.showReference;
+  //   } else {
+  //     return null;
+  //   }
+  // },
+
+  // endHandler() {
+  //   if (this.props.mutant) {
+  //     return this.hideReference;
+  //   } else {
+  //     return null;
+  //   }
+  // },
+
   render() {
     const classes = cn([
       styles.gene,
@@ -222,7 +266,12 @@ export const Nucleotide = React.createClass({
     ]);
 
     return (
-      <span className={classes} >
+      <span className={classes}
+        onMouseOver={this.overHandler()}
+        onMouseOut={this.outHandler()}
+        onTouchStart={this.overHandler()}
+        onTouchEnd={this.outHandler()} >
+        {this.state.currentVal}
       </span>
     );
   },
