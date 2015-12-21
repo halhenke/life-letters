@@ -5,8 +5,13 @@ import {Table, Column, Cell} from 'fixed-data-table';
 import EllipsisText from 'react-ellipsis-text';
 
 const TextCell = ({rowIndex, data, columnKey, highlight, ...props}) => {
+  const content = `${data[rowIndex][columnKey]}`;
+  const highlighted = (highlight !== false) && (highlight === rowIndex);
+  const backgroundColor = highlighted ? 'rgba(158, 158, 158, 0.54)' : '';
   const styled = {
+    backgroundColor,
   };
+
   return (
     <Cell {...props} style={styled}>
       <EllipsisText text={content} length={200} />
