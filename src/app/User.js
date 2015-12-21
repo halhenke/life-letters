@@ -91,8 +91,15 @@ export const UserDetail = React.createClass({
               </div>
             </div>
           </Card>
+          <div>
+            <GeneSequence
+              refSequence={this.props.reference}
+              userSequence={this.props.user.sequence}
+              geneRegions={this.props.geneRegions} />
+          </div>
         </Paper>
       </div>
     );
   },
 });
+

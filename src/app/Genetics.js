@@ -106,6 +106,17 @@ export const GeneSequence = React.createClass({
   },
 
 
+  mutant(index, nuc) {
+    const mutated = _.
+      find(this.props.userSequence, {index: index});
+
+    if (mutated && (mutated.letter !== nuc)) {
+      return mutated.letter;
+    } else {
+      return null;
+    }
+  },
+
   render() {
     const sequenceClasses = cn(styles.sequence, {
       showRegion: this.state.showRegion,
