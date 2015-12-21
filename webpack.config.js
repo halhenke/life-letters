@@ -23,7 +23,7 @@ const assetsLoaders = [
   {
     test: /\.(otf|eot|ttf|woff|woff2)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
     loader: 'url?limit=' + embedFileSize
-  }
+  },
 ];
 
 const entry = [
@@ -36,7 +36,7 @@ const entry = [
 module.exports = {
   devtool: 'source-map',
   entry,
-  output: {filename: 'bundle.js', path: path.resolve('example')},
+  output: {filename: 'bundle.js', path: path.resolve('build')},
   plugins: [
     new HtmlWebpackPlugin(),
     new webpack.DefinePlugin({
