@@ -1,35 +1,66 @@
 import React from 'react';
 import styles from './Content.css';
+import {UserList, UserDetail} from './User.js';
+const UserCards = React.createClass({
+
+  propTypes: {
+    users: React.PropTypes.array.required,
+    clicked: React.PropTypes.func.required,
+  },
+  render() {
+    return (
+      <div>
+        {
+          <h1>Users</h1>
+        }
+      </div>
+    );
+  },
+});
+
 // Break 12:40
 
-export default class Content extends React.Component {
+export default React.createClass({
+  propTypes: {
+    users: React.PropTypes.array.required,
+    reference: React.PropTypes.array.required,
+    geneRegions: React.PropTypes.array.required,
+  },
+
+
+  componentWillMount() {
+    this.setState({
+      component: <UserCards
+        users={this.props.users}
+        clicked={this.userCardClick()}/>,
+    });
+  },
 
   userCardClick() {
     const self = this;
 
-    return (num) => {
-      console.log(`userCardClick got ${num}`);
-      // self.setState({
-      //   component: <DetailView people={users} initial={num} clicked={this.detailClick()} />,
-      // });
+    return num => {
+      self.setState({
+        component: <UserDetail
+          user={self.props.users[num]}
+          reference={self.props.referrenceGenome}
+          geneRegions={self.props.geneRegions}
+          clicked={self.detailClick()} />,
+      });
     };
-  }
+  },
 
   detailClick() {
     const self = this;
 
     return () => {
       self.setState({
-        component: <UserCards clicked={this.userCardClick()}/>
+        component: <UserCards
+          users={this.props.users}
+          clicked={self.userCardClick()}/>,
       });
     };
-  }
-
-  componentDidMount() {
-    this.setState({
-      component: <UserCards clicked={this.userCardClick()}/>
-    });
-  }
+  },
 
   render() {
     return (
@@ -37,5 +68,5 @@ export default class Content extends React.Component {
         {this.state.component}
       </section>
     );
-  }
-}
+  },
+});

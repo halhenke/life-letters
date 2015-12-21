@@ -2,6 +2,8 @@ import React from 'react';
 import Header from './Header';
 import Content from './Content';
 import Footer from './Footer';
+import {users} from '../data.json';
+import {geneRegions, referrenceGenome} from '../data.json';
 import './App.css';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
@@ -12,7 +14,9 @@ export default class App extends React.Component {
     return (
       <div>
         <Header />
-        <Content />
+        <Content users={users}
+          geneRegions={geneRegions}
+          referrenceGenome={referrenceGenome}/>
         <Footer />
       </div>
     );

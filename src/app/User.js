@@ -44,4 +44,13 @@ export const UserList = React.createClass({
       </section>
     );
   }
+
+export const UserDetail = React.createClass({
+
+  render() {
+    return (
+      <div>
+      </div>
+    );
+  },
 });
