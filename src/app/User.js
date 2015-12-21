@@ -5,9 +5,9 @@ import {Card, CardHeader, CardMedia, CardTitle} from 'material-ui';
 export const UserList = React.createClass({
 
   propTypes: {
-    firstName: React.PropTypes.string.required,
-    lastName: React.PropTypes.string.required,
-    avatar: React.PropTypes.string.required
+    user: React.PropTypes.object.required,
+    click: React.PropTypes.func.required,
+    order: React.PropTypes.number.required,
   },
 
   choose(e) {
@@ -43,13 +43,33 @@ export const UserList = React.createClass({
         </Card>
       </section>
     );
-  }
+  },
+});
+
 
 export const UserDetail = React.createClass({
 
+  propTypes: {
+    user: React.PropTypes.object.required,
+    reference: React.PropTypes.array.required,
+    geneRegions: React.PropTypes.array.required,
+    clicked: React.PropTypes.func.required,
+  },
+
+  back(e) {
+    e.preventDefault();
+    this.props.clicked();
+  },
+
   render() {
+    const fullName = `${this.props.user.firstName} ${this.props.user.lastName}`;
     return (
       <div>
+        <RaisedButton label="Back to Users" secondary={true} onClick={this.back} />
+        <Paper>
+          <Card>
+          </Card>
+        </Paper>
       </div>
     );
   },
