@@ -16,6 +16,26 @@
   /*overflow-wrap: break-word;*/
 }
 
+.regions {
+  padding: 1rem;
+}
+
+.regions :global .public_fixedDataTable_main {
+  margin: auto;
+}
+
+.regions .heading {
+  width: 50%;
+  font-size: 2rem;
+}
+
+.regions .bodyRow {
+  height: 2rem;
+}
+
+.regions .regionDesc {
+
+}
 
 .maxWidth {
   width: 100%;
