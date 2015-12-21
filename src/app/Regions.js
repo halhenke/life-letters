@@ -1,6 +1,16 @@
 import React from 'react';
 import styles from './Genetics.css';
+import '!!style!css!fixed-data-table/dist/fixed-data-table.css';
+import {Table, Column, Cell} from 'fixed-data-table';
 
+const TextCell = ({rowIndex, data, columnKey, highlight, ...props}) => {
+  const styled = {
+  };
+  return (
+    <Cell {...props} style={styled}>
+    </Cell>
+  );
+};
 
 export const Regions = React.createClass({
   propTypes: {
@@ -15,6 +25,57 @@ export const Regions = React.createClass({
   },
 
   render() {
-    return <div />;
+    const dataList = this.props.regions;
+    const columnWidths = {
+      name: 100,
+      start: 0,
+      end: 0,
+      description: 300,
+    };
+
+    return (
+      <div className={styles.regions}>
+        <Table
+          rowHeight={60}
+          headerHeight={50}
+          rowsCount={dataList.length}
+          isColumnResizing={false}
+          width={500}
+          maxHeight={500}
+          overflowY="auto"
+          onRowClick={this.rowClicked}
+          {...this.props}>
+          <Column
+            columnKey="name"
+            header={<Cell>First Name</Cell>}
+            cell={<TextCell data={dataList}
+              highlight={this.props.showRegion} />}
+            fixed={true}
+            width={columnWidths.name}
+            isResizable={false} />
+          <Column
+            columnKey="start"
+            header={<Cell>Start</Cell>}
+            cell={<TextCell data={dataList} />}
+            width={columnWidths.start}
+            isResizable={false}
+            minWidth={70}
+            maxWidth={170} />
+          <Column
+            columnKey="end"
+            header={<Cell>End</Cell>}
+            cell={<TextCell data={dataList} />}
+            width={columnWidths.end}
+            isResizable={false} />
+          <Column
+            columnKey="description"
+            header={<Cell>Description</Cell>}
+            cell={<TextCell data={dataList} />}
+            width={columnWidths.description}
+            flexGrow={1}
+            isResizable={false} />
+        </Table>
+      </div>
+    );
   },
 });
