@@ -105,6 +105,29 @@ export const GeneSequence = React.createClass({
     geneRegions: React.PropTypes.array,
   },
 
+  componentWillMount() {
+    this.setState({
+      showRegion: false,
+      regionIndex: false,
+    });
+  },
+
+  regionClick(row) {
+    const self = this;
+
+    self.setState({
+      showRegion: self.props.geneRegions[row].name,
+      regionIndex: row,
+    });
+  },
+
+  unselect(e) {
+    e.preventDefault();
+    this.setState({
+      showRegion: false,
+      regionIndex: false,
+    });
+  },
 
   mutant(index, nuc) {
     const mutated = _.
@@ -149,11 +172,16 @@ export const GeneSequence = React.createClass({
         <h1>User Sequence</h1>
         {
           this.props.refSequence.map((g, index) => {
+            const region = this.region(index);
+            const active = this.state.showRegion && (region.includes(this.state.showRegion));
 
             return (
               <Nucleotide
                 base={g}
-                key={index} />
+                key={index}
+                mutant={this.mutant(index, g)}
+                region={region}
+                active={active} />
             );
           }, this)
         }
