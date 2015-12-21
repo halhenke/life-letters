@@ -6,7 +6,7 @@ export default class Header extends React.Component {
   render() {
     return (
       <header className={styles.header}>
-        <a className={styles.logo} href="/">Logo</a>
+        <a className={styles.logo} href="/">Life Letters</a>
       </header>
     );
   }
