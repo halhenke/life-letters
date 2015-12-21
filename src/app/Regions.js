@@ -2,12 +2,14 @@ import React from 'react';
 import styles from './Genetics.css';
 import '!!style!css!fixed-data-table/dist/fixed-data-table.css';
 import {Table, Column, Cell} from 'fixed-data-table';
+import EllipsisText from 'react-ellipsis-text';
 
 const TextCell = ({rowIndex, data, columnKey, highlight, ...props}) => {
   const styled = {
   };
   return (
     <Cell {...props} style={styled}>
+      <EllipsisText text={content} length={200} />
     </Cell>
   );
 };
