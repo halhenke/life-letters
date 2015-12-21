@@ -8,7 +8,6 @@
     // no ES6
     "arrow-parens": 0,
     "arrow-spacing": 0,
-    "comma-dangle": [2, "always"],
     "constructor-super": 0,
     "generator-star-spacing": 0,
     "no-class-assign": 0,
@@ -27,6 +26,10 @@
     "strict": 0,
     "no-console": 0,
     "no-process-env": 0,
-    "vars-on-top": 0
+    "vars-on-top": 0,
+
+    "comma-dangle": [2, "always-multiline"],
+    "react/forbid-prop-types": [0, ["array"]], // Forbid certain propTypes
+
   }
 }

@@ -60,7 +60,7 @@ module.exports = {
   },
   resolve: {extensions: ['', '.js']},
   stats: {colors: true},
-  eslint: {configFile: 'src/.eslintrc'},
+  eslint: {configFile: '.eslintrc'},
   devServer: {
     hot: true,
     historyApiFallback: true,
