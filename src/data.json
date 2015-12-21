@@ -1023,6 +1023,7 @@
   ],
   "users": [
     {
+      "avatar": "http://cdn.hitfix.com/photos/6020098/Black-Widow-not-on-merchandise_article_story_large.jpg",
       "address": {
         "postcode": 4720,
         "state": "TAS",
@@ -1107,6 +1108,7 @@
       ]
     },
     {
+      "avatar": "http://images.enstarz.com/data/images/full/38866/chris-hemsworth-in-thor-the-dark-world.jpg",
       "address": {
         "postcode": 2800,
         "state": "QLD",
@@ -1167,6 +1169,7 @@
       ]
     },
     {
+      "avatar": "http://screenrant.com/wp-content/uploads/avengers-age-ultron-hulk-mark-ruffalo.jpg",
       "address": {
         "postcode": 3166,
         "state": "QLD",
