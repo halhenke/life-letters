@@ -40,7 +40,7 @@ module.exports = {
     'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server'
   ]),
-  output: {filename: 'bundle.js', path: path.resolve('example')},
+  output: {filename: 'bundle.js', path: path.resolve('build')},
   plugins: [
     new HtmlWebpackPlugin(),
     new webpack.DefinePlugin({
